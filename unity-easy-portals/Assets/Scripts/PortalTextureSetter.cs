@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalTextureResizer : MonoBehaviour {
+public class PortalTextureSetter : MonoBehaviour {
 
     public Camera cameraA;
     public Material matA;
