@@ -206,6 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 314059497}
+  - component: {fileID: 314059498}
   m_Layer: 0
   m_Name: PortalPair
   m_TagString: Untagged
@@ -228,6 +229,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &314059498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314059496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f801bb64f1ba4e269efe66cbd3dae9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraA: {fileID: 1276439807}
+  matA: {fileID: 2100000, guid: 53ec686eac3464abe85e6d512b1e146c, type: 2}
+  cameraB: {fileID: 2035913705}
+  matB: {fileID: 2100000, guid: 69ae93efe76994e4d861f40fcc5de9d5, type: 2}
 --- !u!1 &314696509
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +256,7 @@ GameObject:
   - component: {fileID: 314696512}
   - component: {fileID: 314696511}
   m_Layer: 0
-  m_Name: Render
+  m_Name: RenderA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +357,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1011760678}
-  - {fileID: 1276439805}
+  - {fileID: 2035913703}
   m_Father: {fileID: 314059497}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -357,7 +373,7 @@ GameObject:
   - component: {fileID: 1011760680}
   - component: {fileID: 1011760679}
   m_Layer: 0
-  m_Name: Render
+  m_Name: RenderB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +459,7 @@ GameObject:
   - component: {fileID: 1276439807}
   - component: {fileID: 1276439808}
   m_Layer: 0
-  m_Name: Portal Camera
+  m_Name: Portal CameraA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,11 +471,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1276439804}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -40, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 711263017}
+  m_Father: {fileID: 1605589079}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1276439807
@@ -693,7 +709,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 314696510}
-  - {fileID: 2035913703}
+  - {fileID: 1276439805}
   m_Father: {fileID: 314059497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -785,7 +801,7 @@ GameObject:
   - component: {fileID: 2035913705}
   - component: {fileID: 2035913706}
   m_Layer: 0
-  m_Name: Portal Camera
+  m_Name: Portal CameraB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,11 +813,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2035913702}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -40, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1605589079}
+  m_Father: {fileID: 711263017}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2035913705
