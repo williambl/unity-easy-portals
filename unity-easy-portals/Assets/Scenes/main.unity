@@ -356,7 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276439805}
   - component: {fileID: 1276439807}
-  - component: {fileID: 1276439806}
+  - component: {fileID: 1276439808}
   m_Layer: 0
   m_Name: Portal Camera
   m_TagString: Untagged
@@ -371,19 +371,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1276439804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 711263017}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1276439806
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1276439804}
-  m_Enabled: 1
 --- !u!20 &1276439807
 Camera:
   m_ObjectHideFlags: 0
@@ -424,6 +417,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1276439808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1276439804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9205083ccbcb441a9bd7b198ac15b4d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 1748898346}
+  portal: {fileID: 711263017}
+  otherPortal: {fileID: 1605589079}
 --- !u!1 &1565355211
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,13 +597,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1748898343}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0, y: 0.99973947, z: -0, w: 0.022825582}
+  m_LocalPosition: {x: 0, y: 1, z: 20.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 177.384, z: 0}
 --- !u!1 &2035913702
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035913703}
   - component: {fileID: 2035913705}
-  - component: {fileID: 2035913704}
+  - component: {fileID: 2035913706}
   m_Layer: 0
   m_Name: Portal Camera
   m_TagString: Untagged
@@ -621,19 +628,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2035913702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1605589079}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2035913704
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2035913702}
-  m_Enabled: 1
 --- !u!20 &2035913705
 Camera:
   m_ObjectHideFlags: 0
@@ -674,3 +674,17 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2035913706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035913702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9205083ccbcb441a9bd7b198ac15b4d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 1748898346}
+  portal: {fileID: 1605589079}
+  otherPortal: {fileID: 711263017}
