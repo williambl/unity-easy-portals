@@ -15,7 +15,7 @@ public class PortalMoveCamera : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Vector3 cameraOffset = playerCamera.position - otherPortal.position;
+        Vector3 cameraOffset = Vector3.Reflect(playerCamera.position - otherPortal.position, otherPortal.forward);
         transform.position = portal.position + cameraOffset;
 
         float portalAngleDifference = Quaternion.Angle(portal.rotation, otherPortal.rotation);
