@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class PortalMoveCamera : MonoBehaviour {
 
-    public Transform playerCamera;
+    private Camera portalCamera;
+
     public Transform portal;
     public Transform otherPortal;
 
-    // Use this for initialization
     void Start () {
-
+        portalCamera = GetComponent<Camera>();
     }
 
-    // Update is called once per frame
-    void Update () {
-        Vector3 cameraOffset = Vector3.Reflect(playerCamera.position - otherPortal.position, otherPortal.forward);
-        transform.position = portal.position + cameraOffset;
+    void Update ()
+    {
+        //Modified from https://github.com/sclark39/Portal-In-Unity/blob/master/Portal/Assets/PortalCamera.cs
+        Camera mainCamera = Camera.main;
+        portalCamera.fieldOfView = mainCamera.fieldOfView;
 
-        float portalAngleDifference = Quaternion.Angle(portal.rotation, otherPortal.rotation);
+        Vector3 playerOffsetFromPortal = otherPortal.InverseTransformPoint(mainCamera.transform.position);
+        transform.position = portal.TransformPoint(playerOffsetFromPortal);
 
-        Quaternion portalRotationDifference = Quaternion.AngleAxis(portalAngleDifference, Vector3.up);
-        Vector3 newCameraDirection = portalRotationDifference * playerCamera.forward;
-        transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+        Quaternion relative = Quaternion.Inverse(otherPortal.transform.rotation) * mainCamera.transform.rotation;
+        transform.rotation = portal.transform.rotation * relative;
     }
 }
