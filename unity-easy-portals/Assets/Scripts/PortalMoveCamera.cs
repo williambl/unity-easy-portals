@@ -18,6 +18,7 @@ public class PortalMoveCamera : MonoBehaviour {
         //Modified from https://github.com/sclark39/Portal-In-Unity/blob/master/Portal/Assets/PortalCamera.cs
         Camera mainCamera = Camera.main;
         portalCamera.fieldOfView = mainCamera.fieldOfView;
+        portalCamera.nearClipPlane = Vector3.Distance(transform.position, portal.position);
 
         Vector3 playerOffsetFromPortal = otherPortal.InverseTransformPoint(mainCamera.transform.position);
         transform.position = portal.TransformPoint(playerOffsetFromPortal);
