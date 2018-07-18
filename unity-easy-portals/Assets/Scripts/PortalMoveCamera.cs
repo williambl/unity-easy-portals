@@ -33,7 +33,6 @@ public class PortalMoveCamera : MonoBehaviour {
                     -portal.forward.z,
                     Mathf.Abs(portalPlane.GetDistanceToPoint(transform.position)));
 
-        Debug.Log(Mathf.Abs(portalPlane.GetDistanceToPoint(transform.position)));
         //Put it into Camera Space
         Vector4 clipPlaneCamera = Matrix4x4.Transpose(portalCamera.cameraToWorldMatrix) * clipPlaneWorld;
         //Apply it to the projection matrix

@@ -7,21 +7,26 @@ public class PortalTeleporter : MonoBehaviour {
     public Transform reciever;
 
     private List<Transform> overlappingTransforms = new List<Transform>();
+    private Collider coll;
+
+    void Start () {
+        coll = GetComponent<Collider>();
+    }
 
     void Update () {
         if (overlappingTransforms.Count > 0)
         {
             List<Transform> forDeletion = new List<Transform>();
             foreach (Transform overlappingTransform in overlappingTransforms) {
-                Vector3 portalToTarget = overlappingTransform.position - transform.position;
-                float dotProduct = Vector3.Dot(transform.up, portalToTarget);
-
-                if (dotProduct < 0f)
+                if (coll.bounds.Contains(overlappingTransform.position))
                 {
                     float rotationDiff = -Quaternion.Angle(transform.rotation, reciever.rotation);
+                    Debug.Log(rotationDiff);
                     overlappingTransform.Rotate(Vector3.up, rotationDiff);
 
+                    Vector3 portalToTarget = overlappingTransform.position - transform.position;
                     Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToTarget;
+                    Debug.Log(positionOffset);
                     overlappingTransform.position = reciever.position + positionOffset;
 
                     forDeletion.Add(overlappingTransform);
