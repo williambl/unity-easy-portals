@@ -18,25 +18,26 @@ public class PortalMoveCamera : MonoBehaviour {
         //Modified from https://github.com/sclark39/Portal-In-Unity/blob/master/Portal/Assets/PortalCamera.cs
         Camera mainCamera = Camera.main;
         portalCamera.fieldOfView = mainCamera.fieldOfView;
-        
+
         Vector3 playerOffsetFromPortal = otherPortal.InverseTransformPoint(mainCamera.transform.position);
         transform.position = portal.TransformPoint(playerOffsetFromPortal);
 
         Quaternion relative = Quaternion.Inverse(otherPortal.transform.rotation) * mainCamera.transform.rotation;
         transform.rotation = portal.transform.rotation * relative;
-        
-        Plane portalPlane = new Plane(portal.forward, portal.position);
-        //Create an oblique clip plane in the same position and rotation as the portal
-        Vector4 clipPlaneWorld = new Vector4(
-                    -portal.forward.x,
-                    -portal.forward.y,
-                    -portal.forward.z,
-                    Mathf.Abs(portalPlane.GetDistanceToPoint(transform.position)));
 
-        //Put it into Camera Space
-        Vector4 clipPlaneCamera = Matrix4x4.Transpose(portalCamera.cameraToWorldMatrix) * clipPlaneWorld;
+        //Create a camera space near clip plane
+        Vector4 clipPlaneCamera = CameraSpacePlane(portalCamera, portal.position, portal.forward, 1.0f);
         //Apply it to the projection matrix
         portalCamera.projectionMatrix = portalCamera.CalculateObliqueMatrix(clipPlaneCamera);
 
+    }
+
+    // Given position/normal of the plane, calculates plane in camera space.
+    private Vector4 CameraSpacePlane (Camera cam, Vector3 pos, Vector3 normal, float sideSign)
+    {
+        Matrix4x4 m = cam.worldToCameraMatrix;
+        Vector3 cpos = m.MultiplyPoint(pos);
+        Vector3 cnormal = m.MultiplyVector(normal).normalized * sideSign;
+        return new Vector4(cnormal.x, cnormal.y, cnormal.z, -Vector3.Dot(cpos,cnormal));
     }
 }
