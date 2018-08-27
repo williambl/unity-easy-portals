@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4981283476409520}
   - component: {fileID: 65956203307727656}
   - component: {fileID: 114887982450287582}
+  - component: {fileID: 114356520755857460}
   m_Layer: 0
   m_Name: TriggerA
   m_TagString: Untagged
@@ -137,6 +138,7 @@ GameObject:
   - component: {fileID: 4849620801486864}
   - component: {fileID: 65112109321895278}
   - component: {fileID: 114876829119762154}
+  - component: {fileID: 114683095105516952}
   m_Layer: 0
   m_Name: TriggerB
   m_TagString: Untagged
@@ -220,7 +222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1899790413367314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4909657558253656}
@@ -265,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1211578172905458}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4169087743247240}
@@ -458,7 +460,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 4, z: 0.1}
+  m_Size: {x: 2, y: 4, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65956203307727656
 BoxCollider:
@@ -470,8 +472,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 4, z: 0.1}
+  m_Size: {x: 2, y: 4, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114356520755857460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1211578172905458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5150b70504c2045dd8e6888cb53383d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reciever: {fileID: 4209869853630406}
 --- !u!114 &114597893893112820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -500,6 +514,18 @@ MonoBehaviour:
   matA: {fileID: 2100000, guid: 53ec686eac3464abe85e6d512b1e146c, type: 2}
   cameraB: {fileID: 20333320498207142}
   matB: {fileID: 2100000, guid: 69ae93efe76994e4d861f40fcc5de9d5, type: 2}
+--- !u!114 &114683095105516952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899790413367314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5150b70504c2045dd8e6888cb53383d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reciever: {fileID: 4306353821902768}
 --- !u!114 &114819939325894368
 MonoBehaviour:
   m_ObjectHideFlags: 1
